@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
-import 'package:llm_api_picker/llm_api_picker.dart' as llm;
+import 'package:yofardev_ai/utils/llm_api_picker_mock.dart' as llm;
 
 import 'avatar.dart';
 import 'chat_entry.dart';

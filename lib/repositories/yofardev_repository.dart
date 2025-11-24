@@ -2,7 +2,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:llm_api_picker/llm_api_picker.dart' as llm;
+import 'package:yofardev_ai/utils/llm_api_picker_mock.dart' as llm;
 import 'package:uuid/uuid.dart';
 
 import '../l10n/localization_manager.dart';
@@ -29,8 +29,15 @@ class YofardevRepository {
       returnJson: true,
       debugLogs: true,
     );
-    answer =
-        answer = answer.substring(answer.indexOf('{'), answer.indexOf('}') + 1);
+    // Try to extract JSON if present, otherwise use the whole answer
+    if (answer != null && answer.contains('{') && answer.contains('}')) {
+      try {
+        answer = answer.substring(answer.indexOf('{'), answer.lastIndexOf('}') + 1);
+      } catch (e) {
+        // Keep original answer if extraction fails
+      }
+    }
+    answer = answer ?? '{}';
     return ChatEntry(
       id: const Uuid().v4(),
       body: answer,

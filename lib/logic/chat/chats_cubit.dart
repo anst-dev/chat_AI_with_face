@@ -42,24 +42,6 @@ class ChatsCubit extends Cubit<ChatsState> {
     talkingCubit.init();
   }
 
-  void init() async {
-    getCurrentChat();
-    setCurrentLanguage(
-      PlatformUtils.checkPlatform() == 'Web' ||
-              PlatformUtils.checkPlatform() == 'MacOS'
-          ? "fr"
-          : await SettingsService().getLanguage() ?? 'fr',
-    );
-  }
-
-  void toggleFunctionCalling() {
-    emit(
-      state.copyWith(
-        functionCallingEnabled: !state.functionCallingEnabled,
-      ),
-    );
-  }
-
   Future<void> prepareWaitingSentences(List<String> sentences) async {
     if (PlatformUtils.checkPlatform() == 'Web') {
       emit(state.copyWith(initializing: false));

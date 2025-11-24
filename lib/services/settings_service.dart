@@ -76,24 +76,32 @@ class SettingsService {
       case 'Android':
         if (language == 'fr') {
           return AppConstants.frenchAndroidVoice;
+        } else if (language == 'vi') {
+          return AppConstants.vietnameseAndroidVoice;
         } else {
           return AppConstants.englishAndroidVoice;
         }
       case 'iOS':
         if (language == 'fr') {
           return AppConstants.frenchIOSVoice;
+        } else if (language == 'vi') {
+          return AppConstants.vietnameseIOSVoice;
         } else {
           return AppConstants.englishIOSVoice;
         }
       case 'Web':
         if (language == 'fr') {
           return 'Thomas (French (France))';
+        } else if (language == 'vi') {
+          return 'Google Tiếng Việt';
         } else {
           return 'Google UK English Male';
         }
       case 'MacOS':
         if (language == 'fr') {
           return 'Nicolas (Enhanced)';
+        } else if (language == 'vi') {
+          return 'Linh';
         } else {
           return 'Lee (Premium)';
         }

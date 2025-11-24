@@ -28,6 +28,8 @@ class AppConstants {
   static String englishAndroidVoice = "en-us-x-iom-local";
   static String frenchIOSVoice = "Thomas";
   static String englishIOSVoice = "Fred";
+  static String vietnameseAndroidVoice = "vi-vn-x-vic-local";
+  static String vietnameseIOSVoice = "Linh";
 
   // Other
   static double pickedImageMaxWidth = 1024;

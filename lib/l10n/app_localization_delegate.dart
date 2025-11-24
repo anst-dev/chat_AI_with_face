@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'language_en.dart';
 import 'language_fr.dart';
+import 'language_vi.dart';
 import 'languages.dart';
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<Languages> {
@@ -11,6 +12,7 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<Languages> {
   bool isSupported(Locale locale) => <String>[
         'en',
         'fr',
+        'vi',
       ].contains(locale.languageCode);
 
   @override
@@ -22,8 +24,10 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<Languages> {
         return LanguageFr();
       case 'en':
         return LanguageEn();
+      case 'vi':
+        return LanguageVi();
       default:
-        return LanguageFr();
+        return LanguageVi();
     }
   }
 

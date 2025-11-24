@@ -45,7 +45,11 @@ void main() async {
     );
   }
   if (PlatformUtils.checkPlatform() != 'Web') {
-    await dotenv.load();
+    try {
+      await dotenv.load();
+    } catch (e) {
+      debugPrint('Warning: .env file not found or empty: $e');
+    }
   }
   runApp(
     const MyApp(),
@@ -75,6 +79,7 @@ class MyApp extends StatelessWidget {
         supportedLocales: const <Locale>[
           Locale('fr'),
           Locale('en'),
+          Locale('vi'),
         ],
         localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
           AppLocalizationsDelegate(),

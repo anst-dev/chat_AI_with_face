@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:llm_api_picker/llm_api_picker.dart';
+import 'package:yofardev_ai/utils/llm_api_picker_mock.dart';
 
 import '../../../l10n/localization_manager.dart';
 import '../../../logic/chat/chats_cubit.dart';

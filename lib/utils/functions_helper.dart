@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:llm_api_picker/llm_api_picker.dart';
+import 'llm_api_picker_mock.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 import '../services/alarm_service.dart';
